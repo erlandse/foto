@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+  <title>Familie fotos fra Ellenog Kristian</title>
+ 
+ 
+  <!--link href="all.css" type="text/css" rel="stylesheet"/-->
+  <link href="main.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="ElasticClass.js"></script>
+  <script type="text/javascript" charset="utf-8" src="main.js"></script>
+  <script type="text/javascript" charset="utf-8" src="tools.js"></script>
+  <script type="text/javascript" charset="utf-8" src="JsonTool.js"></script>
+  <script type="text/javascript" charset="utf-8" src="json2.js"></script>
+  <script type="text/javascript" charset="utf-8" src="agg.js"></script>
+  <script type="text/javascript" charset="utf-8" src="wheel.js"></script>
+
+  <link href="wordwheel.css" type="text/css" rel="stylesheet"/>
+  <!--link href="uio-app-print.css" type="text/css" rel="stylesheet" media="print" /-->
+
+</style>
+</head>
+
+<body onload='mainInitialize()' onresize='resize()'>
+<div  id='gridContainer' class='gridContainer'>
+<div id='topHeader' class='topHeader'> 
+<table>
+ <tr><td>Tag liste</td><td><select id='tagList' onchange='insertTag()'></select></td></tr>
+<tr>
+<td>Tags</td><td><input  style='vertical-align:middle' type='text' onkeyup='changeWordwheel(event)' size='25' id='inputField'/></td></td>
+</tr>  
+<tr>
+<td>Kommentarer</td><td><input  style='vertical-align:middle' type='text' size='25' onkeyup='changeWordwheel2(event)' id='commentField'/></td>
+<td colspan='2' style='text-align:left'><input type='button' value="Søg" onclick='search()' style='font-size:16px'/></td> 
+</tr>  
+</table>
+
+</div><!--topheader-->
+
+<div id='mainContent' class='mainContent'>
+  <div id='contentDiv' class='contentDiv'>
+     <div id='resultDiv' class='resultDiv'>
+        <table id='resultTable' style='width:100%;height:100%;'>
+        </table>    
+     </div>  
+     <div id='traverseDiv' class='traverseDiv'>
+        <table id='traverseTable'>
+        <tr>
+        <td><input type='button' id='zeroButtonId' value='Nulstil' onclick='setToZero()' style='font-size:16px'></td>
+        <td><input type='button' id='prevButtonId' value='Forrige' onclick='move(-1)' style='font-size:16px'></td>
+        <td><input type='button' id='nextButtonId' value='Neste' onclick='move(1)' style='font-size:16px'></td>
+        <td><span id='traversalLabel' class='label'></span></td>
+        </tr>    
+        </table>
+     </div>  
+  </div>
+</div>
+
+
+<div id="app-footer-wrapper"> 
+  <div id="app-footer">
+  </div> 
+</div>
+
+
+
+</div> <!--gridcontainer-->
+<div id="wordwheel_div"> <ul id='ul' class='wordwheel' >
+  </ul> </div>
+<div id="wheel2"style='position: absolute;'> <ul id='ul2' class='wordwheel' >
+  </ul> </div>
+
+
+<div id='showObjectDiv'>
+<div id="picDiv">
+<a id='arefPic' target='_blank' href=""><img id='pictureDiv' src=""/></a>
+</div>
+<div id='middleDiv' style="background-color:#dddddd;height:10px">
+</div>  
+<div id='metadataDiv'>
+<span style='margin-left:5px'>Kommentarer:</span><br>  
+<div id='commentDiv'>
+</div>    
+<table>
+<tr>
+ <td colspan='3'><input type='button'  value='Retur' onclick='returnToNavigation()'' style='font-size:16px'/>
+ <input type='button' id='singlePrev' value='Forrige' onclick='prevSinglePic()' style='font-size:16px'/>
+ <input type='button' id='singleNext' value='Næste' onclick='nextSinglePic()' style='font-size:16px'>
+</td>
+</tr>  
+<tr>
+ <td>Tags:</td><td colspan='2'><span id='spanTags'></span></td>
+</tr>  
+<tr>
+ <td>Dato:</td><td colspan='2'><span id='spanDato'></span></td>
+</tr>  
+<tr>
+ <td>URL til foto</td><td coslpan='2'><a href="" id='urlLink'></a></td>
+ </tr> 
+</table>    
+</div> 
+</div> 
+<div id='imageCalculatediv' style="display:none">
+<img id='photoCalculate' src=''/>  
+</div>
+
+</body>
+</html>

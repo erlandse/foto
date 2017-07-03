@@ -1,0 +1,51 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": "1",
+      "number_of_replicas": "1"
+    }
+  },
+  "mappings": {
+    "foto": {
+      "properties": {
+        "whoTagged": {
+          "type": "keyword",
+          "store": true
+        },
+        "tags": {
+          "type": "keyword",
+          "store": true
+        },
+        "message": {
+          "type": "text",
+          "fielddata": true,
+          "analyzer": "standard"
+        },
+        "dato": {
+          "type": "date",
+          "store": true
+        },
+        "creationDate": {
+          "type": "date",
+          "store": true
+        },
+        "path": {
+          "type": "keyword"
+        }
+      }
+    },
+    "tagDescription": {
+      "properties": {
+        "tag": {
+          "type": "keyword",
+          "store": true
+        },
+        "description": {
+          "type": "text",
+          "fielddata": true,
+          "analyzer": "standard"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=1020, user-scalable=yes" />
+ 
+  <title>Meta-tagging foto</title>
+ 
+ 
+  <!--link href="all.css" type="text/css" rel="stylesheet"/-->
+  <link href="main.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8" src="ElasticClass.js"></script>
+  <script type="text/javascript" charset="utf-8" src="main.js"></script>
+  <script type="text/javascript" charset="utf-8" src="tools.js"></script>
+  <script type="text/javascript" charset="utf-8" src="JsonTool.js"></script>
+  <script type="text/javascript" charset="utf-8" src="json2.js"></script>
+  <script type="text/javascript" charset="utf-8" src="agg.js"></script>
+  <script type="text/javascript" charset="utf-8" src="wheel.js"></script>
+
+  <link href="https://app.uio.no/hf/ft/wheel/wordwheel.css" type="text/css" rel="stylesheet"/>
+  <!--link href="uio-app-print.css" type="text/css" rel="stylesheet" media="print" /-->
+<style>
+.uio-app-line-top {
+  background: #000;
+  height: 34px;
+  text-align: left;
+  padding-top:5px;  
+  font-size: 20px;
+}
+
+.uio-app-line-top .uio-logo {
+  width: 970px;
+/*  margin: 0 auto;*/
+  margin-left: 55px;
+  padding-top: 5px;
+  line-height: 1;
+}
+.uio-app-line-top .uio-logo a {
+  color: #fff;
+}
+.uio-app-line-top .uio-logo a.hover,
+.uio-app-line-top .uio-logo a:focus,
+.uio-app-line-top .uio-logo a:hover {
+  color: #96c1d1;
+}
+</style>  
+</head>
+
+<body onload='mainInitialize()' onresize='resize()'>
+<div  id='gridContainer' class='gridContainer'>
+<div id='topHeader' class='topHeader'> 
+<table>
+<tr><td>Tag liste</td><td><select id='tagList' onchange='insertTag()'></select></td></tr>
+
+<tr>
+<td>Tags</td><td><input  style='vertical-align:middle' type='text' onkeyup='changeWordwheel(event)' size='30' id='inputField'/></td>  
+<td>Har tagget:</td>
+<td>
+<select id='whoTagged'>
+  <option value="">Vælg</option>
+  <option value="jens-1955">jens-1955</option>
+  <option value="morten-1957">morten-1957</option>
+  <option value="thomas-1968">thomas-1968</option>
+</select>  <input type="checkbox" id="nottagged" checked> Not
+</td>
+</tr>  
+<tr>
+<td>Kommentarer</td><td><input  style='vertical-align:middle' type='text' size='30' id='commentField'/></td>
+<td colspan='2' style='text-align:center'><input type='button' value="Søg" onclick='search()'/> 
+</tr>  
+</table>
+
+</div><!--topheader-->
+
+<div id='mainContent' class='mainContent'>
+  <!--div id='navigationDiv' class='navigationDiv'>
+    <div class='searchPartDiv'>
+      <span style='vertical-align:middle;margin-left:10px;'>Søk:</span>
+      <br> 
+      <span style='text-align:left;margin-left:10px;'>Gjenstandstype:<br></span>
+      <span style='text-align:left;margin-left:10px;'><select id='keywordList' onChange='insertKeyword()' size='1'></select></span>
+      <br>
+    </div> 
+    <div class='topicDiv'>
+       <table id='navigationTable' style='text-align:left;margin-left:10px;'>
+       </table>   
+    </div>   
+  </div-->
+  <div id='contentDiv' class='contentDiv'>
+     <div id='resultDiv' class='resultDiv'>
+        <table id='resultTable' style='width:100%;height:100%;'>
+        </table>    
+     </div>  
+     <div id='traverseDiv' class='traverseDiv'>
+        <table id='traverseTable'>
+        <tr>
+        <td><input type='button' id='zeroButtonId' value='Nullstill' onclick='setToZero()'></td>
+        <td><input type='button' id='prevButtonId' value='Forrige' onclick='move(-1)'></td>
+        <td><input type='button' id='nextButtonId' value='Neste' onclick='move(1)'></td>
+        <td><span id='traversalLabel' class='label'></span></td>
+        </tr>    
+        </table>
+     </div>  
+  </div>
+</div>
+
+<div>
+
+<div id="app-footer-wrapper"> 
+  <div id="app-footer">
+  </div> 
+</div>
+
+
+</div>
+
+</div> <!--gridcontainer-->
+
+<!-- Page footer end -->
+<div id="wordwheel_div"> <ul id= 'ul' class='wordwheel'>
+  </ul> </div>
+</body>
+</html>

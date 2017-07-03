@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Upload af fotos</title>
+	<meta name="generator" content="BBEdit 9.6" />
+    <script type="text/javascript" src="uploadbatch.js"></script>
+    <script type="text/javascript" src="tools.js"></script>
+    <script type="text/javascript" src="Elastic.js"></script>
+    <script type="text/javascript" src="JsonTool.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://app.uio.no/hf/ft/jquery/jquery.js"></script>
+</head>
+<body onload='initialize()'>
+<table id='tableHeader'>
+<tr>
+<td class='header' style='text-align:center;'>Upload af fotos</td>
+</tr>
+</table>
+<br><br>
+
+<table id='tableBody'>
+<tr>
+<td style='text-align:left;' colspan='2'><span class='cellLabelClass'/>Foto url'ere:</span></td>
+<td style='text-align:left;color:#FF0000'><textarea cols='80' rows='30' id='linkbuffer'></textarea></select></td>
+</tr>
+
+<tr>
+<td style='text-align:left;'><span class='cellLabelClass'/>Progress:</span></td>
+<td style='text-align:left;color:#FF0000'><span class='cellLabelClass' id='progress'/></span></td>
+</tr>
+
+<tr>
+<td style='text-align:left;' colspan='2'><input type='button' class='buttonClass' value='Registrer dokumenter' onclick='loadDocuments()'></input></td>
+<td><input id='idnumber' type='text' class='textFieldClass' size='60'></td>
+</tr>
+<tr>
+<td>Kode:<input id='code' type='text' class='textFieldClass' size='20'>
+</td>        
+</tr>    
+</table>
+
+
+</body>
+</html>

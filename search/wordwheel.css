@@ -1,0 +1,45 @@
+@charset "utf-8";
+
+#wordwheel_div {
+	z-index: 1000;
+	position: absolute;
+	top: 92px;
+	left: 150px;
+	background-color: #fff;
+	height: 160px;
+	width: 160px;
+	overflow: auto;
+	opacity: 1.0;
+	-moz-opacity: 1.0;
+	visibility: hidden;
+
+}
+
+ .notSelectedLi{
+   margin-top:0px;
+/*   list-style-type: none;*/
+   padding: 0px;
+   background-color: #fff;
+   font-size:12px;
+/*   height:16px;*/
+  
+}
+ .selectedLi{
+    background-color:yellow;
+    font-weight: bold;
+    cursor: pointer;
+/*    list-style-type: none;*/
+    font-size:12px;
+/*    height:16px;*/
+
+ }
+
+
+ .wordwheel{
+   margin-top:0px;
+   margin:0px;
+   padding: 0px;
+   list-style-type: none;
+
+}
+ 
